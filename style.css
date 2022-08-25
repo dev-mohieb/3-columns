@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    --transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray-background-headings-buttons: hsl(0, 0%, 95%);
+
+
+    /*
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    */
+}
+body {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-light-gray-background-headings-buttons);
+    min-height: 100vh;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    padding: 2rem;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column {
+    max-width: 284px;
+    flex-basis: 270px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 3rem;
+    text-align: left;
+}
+.sedan {
+    background-color: var(--bright-orange);
+    border-radius: 10px 0 0 10px;
+}
+.suv {
+    background-color: var(--dark-cyan);
+}
+.luxury {
+    background-color: var(--very-dark-cyan);
+    border-radius: 0 10px 10px 0;
+}
+.icon, header, .info {
+    margin-bottom: 2rem;
+}
+header h1 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    color: var(--very-light-gray-background-headings-buttons);
+    font-size: 2.5rem;
+}
+.info {
+    color: var(--transparent-white-paragraphs);
+}
+.info p {
+    line-height: 1.6rem;
+}
+.column button {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    margin-top: 2rem;
+    border: 2px solid var(--very-light-gray-background-headings-buttons);
+    padding: .7rem 2rem;
+    border-radius: 40px; 
+    background-color: var(--very-light-gray-background-headings-buttons);
+    cursor: pointer;
+    transition: background-color .3s ease;
+    font-size: 1.05rem;
+}
+.column button:active {
+    background-color: transparent;
+    color: var(--very-light-gray-background-headings-buttons);
+}
+.sedan button {
+    color: var(--bright-orange);
+}
+.suv button {
+    color: var(--dark-cyan);
+}
+.luxury button {
+    color: var(--very-dark-cyan);
+}
+@media (max-width: 840px) {
+    .container {
+        flex-direction: column;
+    }
+    .column {
+        max-width: 650px;
+    }
+    .sedan {
+        border-radius: 10px 10px 0 0;
+    }
+    .luxury {
+        border-radius: 0 0 10px 10px;
+    }
+    .info {
+        margin-bottom: 2;
+    }
+    .column button {
+        font-size: 1.2rem;
+    }
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+@media (max-width: 631px) {
+    .button-container {
+        justify-content: flex-start;
+    }
+    .column button {
+        font-size: 1rem;
+    }
+}
